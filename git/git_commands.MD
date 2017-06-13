@@ -65,5 +65,7 @@ git branch -u origin/develop        # Set current branch to track origin/develop
 git status                          # View the status of the repository  
 git log                             # View the commit log  
 git log -p -1                       # Show the changes in the last commit  
+git stash                           # Temporarily save uncommitted changes  
+git stash pop                       # Remove changes from stash and reapply to repository  
 ```
 
