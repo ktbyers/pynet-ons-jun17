@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 from pprint import pprint
 
 def read_file(filename):
@@ -50,6 +51,6 @@ my_device['model'] = find_model(show_ver)
 my_device['os_version'] = find_os_version(show_ver)
 my_device['uptime'] = find_uptime(show_ver)
 
-print
+print()
 pprint(my_device)
-print
+print()
