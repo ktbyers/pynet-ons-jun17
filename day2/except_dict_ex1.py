@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 
 net_device = {
     'ip_addr': '172.30.220.1',
@@ -8,17 +9,17 @@ net_device = {
     'model': '3945',
 }
 
-print
+print()
 for k, v in net_device.items():
-    print k, v
+    print(k, v)
 
 net_device['password'] = 'new_value'
 net_device['secret'] = 'some_secret'
 
 device_type = net_device.get('device_type', 'cisco_ios')
-print "\nDefault device type: {}\n".format(device_type)
+print("\nDefault device type: {}\n".format(device_type))
 
 try:
     device_type = net_device['device_type']
 except KeyError:
-    print "Device type not found\n"
+    print("Device type not found\n")
