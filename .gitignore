@@ -99,3 +99,5 @@ ENV/
 
 # mypy
 .mypy_cache/
+day3/pyclass@pynet-jnpr-srx1.txt
+day3/pynet-rtr1.txt
