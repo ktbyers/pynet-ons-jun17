@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""
+http://www.juniper.net/documentation/en_US/junos-pyez/topics/task/program/junos-pyez-rpcs-executing.html
+"""
+
 from jnpr.junos import Device
 from lxml import etree
 import xmltodict
