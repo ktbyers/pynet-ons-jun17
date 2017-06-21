@@ -7,4 +7,3 @@ with open(filename) as f:
     json_data = json.load(f)
 
 pprint(json_data)
-print(type(json_data))

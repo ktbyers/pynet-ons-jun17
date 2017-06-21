@@ -18,7 +18,7 @@ Dictionary for network devices that can be used with Netmiko.
         'password': getpass(),
     }
 
-    pynet_sw1 = {
+    srx = {
         'device_type': 'juniper_junos',
         'ip':   '184.105.247.76',
         'username': 'pyclass',
