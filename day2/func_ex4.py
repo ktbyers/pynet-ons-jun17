@@ -10,6 +10,7 @@ def find_serial_number(show_ver):
     for line in show_ver.splitlines():
         if 'Processor board ID' in line:
             _, serial_number = line.split("Processor board ID")
+            return serial_number
     return ''
 
 def find_vendor(show_ver):
