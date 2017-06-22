@@ -8,6 +8,7 @@ from lxml import etree
 import xmltodict
 import xml.etree.ElementTree as ET
 from getpass import getpass
+from pprint import pprint
 import time
 
 juniper_mx = { 
@@ -22,15 +23,21 @@ a_device.open()
 if False:
     show_version = a_device.rpc.get_software_information()
     print(etree.tostring(show_version, encoding='unicode'))
-
-if False:
-    arp = a_device.rpc.get_arp_table_information()
-    print(etree.tostring(arp, encoding='unicode'))
+    show_version_json = a_device.rpc.get_software_information({'format':'json'})
+    pprint(show_version_json)
 
 if True:
+    arp = a_device.rpc.get_arp_table_information()
+    print(etree.tostring(arp, encoding='unicode'))
+    show_arp_json = a_device.rpc.get_arp_table_information({'format':'json'})
+    pprint(show_arp_json)
+
+if False:
     route = a_device.rpc.get_route_information()
     print(etree.tostring(route, encoding='unicode'))
     my_dict = xmltodict.parse(etree.tostring(route, encoding='unicode'))
+
+
 
 '''
 Structure using xmltodict
