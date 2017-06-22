@@ -20,13 +20,13 @@ juniper_mx = {
 a_device = Device(**juniper_mx)
 a_device.open()
 
-if False:
+if True:
     show_version = a_device.rpc.get_software_information()
-    print(etree.tostring(show_version, encoding='unicode'))
+#    print(etree.tostring(show_version, encoding='unicode'))
     show_version_json = a_device.rpc.get_software_information({'format':'json'})
     pprint(show_version_json)
 
-if True:
+if False:
     arp = a_device.rpc.get_arp_table_information()
     print(etree.tostring(arp, encoding='unicode'))
     show_arp_json = a_device.rpc.get_arp_table_information({'format':'json'})
