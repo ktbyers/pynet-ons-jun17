@@ -4,11 +4,14 @@ Review Exercise2
 
 Process the 'show_arp.txt' file and create a data structure from it.
 
-1. Create a dictionary where the keys are the ip addresses and the corresponding values are the 
-   mac-addresses.
-2. Create a second dictionary where the keys are the mac-addresses and the corresponding values
-   are the ip addresses.
+1. Create a dictionary where the keys are the ip addresses and the corresponding 
+   values are the mac-addresses.
+
+2. Create a second dictionary where the keys are the mac-addresses and the 
+   corresponding values are the ip addresses.
+
 3. Use pretty print to print these two data structures to the screen.
+
 
 
 Your output should look something like the following:
