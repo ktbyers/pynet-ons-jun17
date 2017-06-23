@@ -58,6 +58,13 @@ juniper1 = dict(
     optional_args = {}
 )
 
+juniper2 = dict(
+    hostname='juniper2.twb-tech.com',
+    device_type='junos',
+    username='pyclass',
+    password=password,
+    optional_args = {}
+)
 
 device_list = [
         cisco_rtr1,
