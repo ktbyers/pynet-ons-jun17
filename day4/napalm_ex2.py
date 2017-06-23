@@ -2,13 +2,25 @@
 from pprint import pprint as pp
 
 from napalm_base import get_network_driver
-from my_devices import cisco_rtr1
+from my_devices import cisco_rtr1, juniper1
+
+merge_files = {
+    'cisco': 'cisco_merge.txt',
+    'juniper': 'juniper_merge.txt',
+}
 
 def main():
-    for a_device in (cisco_rtr1,):
+    for a_device in (cisco_rtr1, juniper1):
         device_type = a_device.pop('device_type')
         driver = get_network_driver(device_type)
         device = driver(**a_device)
+
+        if device_type == 'ios':
+            filename = merge_files['cisco']
+        elif device_type == 'junos':
+            filename = merge_files['juniper']
+        else:
+            raise ValueError("Invalid device_type specified")
 
         print
         print ">>>Device open"
@@ -16,7 +28,7 @@ def main():
 
         print
         print ">>>Load config change (merge) - no commit"
-        device.load_merge_candidate(filename='cisco_merge.txt')
+        device.load_merge_candidate(filename=filename)
         print device.compare_config()
 
         print
@@ -26,7 +38,7 @@ def main():
 
         print
         print ">>>Load config change (merge) - commit"
-        device.load_merge_candidate(filename='cisco_merge.txt')
+        device.load_merge_candidate(filename=filename)
         print device.compare_config()
         device.commit_config()
 
